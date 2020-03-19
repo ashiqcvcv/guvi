@@ -1,0 +1,197 @@
+/*----------------------------newsletter-----------------------------------------*/
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.title {
+    font-size: xx-large;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.mail {
+    width: 30%;
+    height: 20%;
+    margin-top: 5%;
+}
+
+.nav {
+    width: 50%;
+    height: 40%;
+    font-size: small;
+    box-shadow: 1px 1px 2px 2px darkgray;
+    border-radius: 25px;
+    padding: 7px 7px 7px 7px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.btn {
+    width: 25%;
+    font-size: large;
+    border-radius: 2em / 5em;
+    background-color: blue;
+    color: #e0e0e0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/*----------------------------flashcard-----------------------------------------*/
+
+.redbtn {
+    border-color: tomato;
+    color: tomato;
+    float: right;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.bluebtn {
+    border-color: blue;
+    color: blue;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+textarea {
+    width: 80%;
+    height: 30%;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+.addqb {
+    border-color: tomato;
+    color: tomato;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.save {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding: 5px 60px;
+    border-color: blue;
+    color: blue;
+}
+
+.close {
+    background-color: tomato;
+    color: #e0e0e0;
+    font-weight: bolder;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 3px 4px;
+}
+
+.addq {
+    border-color: tomato;
+    border-style: solid;
+    width: 30%;
+    height: 40%;
+    margin-left: 30px;
+    padding-left: 10px;
+}
+
+.cq {
+    border-style: solid;
+    background-color: white;
+    border-color: thistle;
+    width: 30%;
+    float: left;
+    margin-top: 2%;
+    margin-left: 2%;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+
+/*----------------------------grocery item-----------------------------------------*/
+
+.boxshadow {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.addgrocery {
+    border-color: black;
+    background-color: #3995f1;
+    color: #75d3d9;
+    border-style: solid;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+
+.grocery {
+    border-color: black;
+    background-color: #75d3d9;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.fontcenter {
+    text-align: center;
+    color: #3995f1;
+}
+
+.padtext {
+    padding-left: 10px;
+}
+
+.clear {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border-color: #3995f1;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sub {
+    width: 80%;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.grocerysub {
+    background-color: transparent;
+    color: white;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.grocerytext {
+    border-style: solid;
+    background-color: transparent;
+    border-color: transparent transparent #dc7659 transparent;
+}
+
+.delete {
+    float: right;
+    margin-right: 20px;
+}
+
+.grocerylist {
+    padding-left: 10px;
+    padding-bottom: 5px;
+    display: inline;
+}

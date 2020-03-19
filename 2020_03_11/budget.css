@@ -1,0 +1,91 @@
+/*--------------------------------------budgetapp-------------------------------*/
+
+.calc {
+    border-style: solid;
+    border-color: forestgreen;
+    border-radius: 7px;
+    background-color: transparent;
+    width: 35%;
+    padding-left: 15px;
+    padding-top: 15px;
+    float: left;
+    margin-right: 5%;
+}
+
+.calctext {
+    border-color: forestgreen;
+    border-style: solid;
+    border-radius: 7px;
+    width: 90%;
+    margin-top: 2%;
+    padding: 5px;
+}
+
+.calculate {
+    border-color: forestgreen;
+    color: forestgreen;
+    background-color: transparent;
+    margin: 3% 1% 3%;
+    border-radius: 5px;
+    padding: 5px 6px 5px 6px;
+}
+
+.budget {
+    width: 20%;
+    float: left;
+}
+
+.addexpense {
+    border-style: solid;
+    border-color: red;
+    border-radius: 7px;
+    background-color: transparent;
+    width: 35%;
+    padding-left: 15px;
+    padding-top: 15px;
+    float: left;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.expensetext {
+    border-color: red;
+    border-style: solid;
+    border-radius: 7px;
+    width: 90%;
+    margin-top: 5%;
+    padding: 5px;
+    margin-bottom: 3%;
+}
+
+.addbtn {
+    border-color: red;
+    color: red;
+    background-color: transparent;
+    margin: 3% 1% 3%;
+    border-radius: 5px;
+    padding: 5px 6px 5px 6px;
+}
+
+table {
+    float: left;
+    margin-top: 5%;
+}
+
+td {
+    padding: 20px 70px;
+}
+
+.a2440 {
+    color: forestgreen;
+    font-size: 30px;
+}
+
+.a60 {
+    color: red;
+    font-size: 30px;
+}
+
+.pad {
+    padding-top: 2%;
+}
