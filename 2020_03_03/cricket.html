@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="cricket.css">
+</head>
+
+<body bgcolor="#E6E6FA">
+    <script src="cricket.js" type="text/javascript"></script>
+    <div id="team1" style="float: left;width: 50%;" class="text">
+        <h1>TEAM 1</h1>
+        <table class="list">
+            <tr>
+                <td>run :</td>
+                <td id="run1">0</td>
+            </tr>
+            <tr>
+                <td>wicket :</td>
+                <td id="wicket1"></td>
+            </tr>
+            <tr>
+                <td>balls left :</td>
+                <td id="ball1"></td>
+            </tr>
+            <button id="bat1" onclick="bat1()" class="btn">Bat</button>
+        </table>
+    </div>
+    <div id="team2" style=" float: right;width: 50%;" class="text">
+        <h1>TEAM 2</h1>
+        <table class="list">
+            <tr>
+                <td>run :</td>
+                <td id="run2">0</td>
+            </tr>
+            <tr>
+                <td>wicket :</td>
+                <td id="wicket2"></td>
+            </tr>
+            <tr>
+                <td>balls left :</td>
+                <td id="ball2"></td>
+            </tr>
+            <button id="bat2" onclick="bat2()" class="btn" disabled>Ball</button>
+        </table>
+</body>
+
+</html>

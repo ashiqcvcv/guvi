@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        setTimeout(function() {
+            document.getElementById('value').innerHTML = '10';
+            setTimeout(function() {
+                document.getElementById('value').innerHTML = '9';
+                setTimeout(function() {
+                    document.getElementById('value').innerHTML = '8';
+                    setTimeout(function() {
+                        document.getElementById('value').innerHTML = '7';
+                        setTimeout(function() {
+                            document.getElementById('value').innerHTML = '6';
+                            setTimeout(function() {
+                                document.getElementById('value').innerHTML = '5';
+                                setTimeout(function() {
+                                    document.getElementById('value').innerHTML = '4';
+                                    setTimeout(function() {
+                                        document.getElementById('value').innerHTML = '3';
+                                        setTimeout(function() {
+                                            document.getElementById('value').innerHTML = '2';
+                                            setTimeout(function() {
+                                                document.getElementById('value').innerHTML = '1';
+                                                setTimeout(function() {
+                                                    document.getElementById('value').innerHTML = 'Happy New Year';
+                                                }, 2000)
+                                            }, 1000)
+                                        }, 1000)
+                                    }, 1000)
+                                }, 1000)
+                            }, 1000)
+                        }, 1000)
+                    }, 1000)
+                }, 1000)
+            }, 1000)
+        }, 1000)
+    </script>
+    <h1 id="value" style="margin-left:20%;margin-top: 20%;"></h1>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <style>
+        .team1 {
+            width: 50%;
+            float: left;
+        }
+        
+        .team2 {
+            width: 50%;
+            float: right;
+        }
+        
+        table {
+            padding: 10px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>RESULT</h1>
+    <h1 id="won"></h1>
+    <div id="list"></div>
+
+    <!--program to append-->
+    <table class="team1" id="team1">
+        <td style="font-size: large;font-weight: bolder;">Team1 scoreboard</td>
+        <tr>
+            <td style="border-style: solid;">Player</td>
+            <td style="border-style: solid;">Run</td>
+        </tr>
+    </table>
+    <table class="team2" id="team2">
+        <td style="font-size: large;font-weight: bolder;">Team2 scoreboard</td>
+        <tr>
+            <td style="border-style: solid;">Player</td>
+            <td style="border-style: solid;">Run</td>
+        </tr>
+    </table>
+
+    <script>
+        var team1 = JSON.parse(localStorage.getItem('team1'));
+        var team2 = JSON.parse(localStorage.getItem('team2'));
+        if (team1.score > team2.score) {
+            var out = "team1 won the game by " + team1.wicket + " wicket";
+            document.getElementById("won").innerHTML = out;
+        } else if (team1.score < team2.score) {
+            var out = "team2 won the game by " + team2.wicket + " wicket";
+            document.getElementById("won").innerHTML = out;
+        } else {
+            document.getElementById("won").innerHTML = "DRAW";
+        }
+        document.getElementById("list").innerHTML = "score for team1 is " +
+            team1.score + " score for team2 is " + team2.score;
+
+        //program for appending td elements
+
+        function appen(temp) {
+            for (var i = 0; i < temp.list.length; i++) {
+                var name = 'player' + (i + 1);
+                var scor;
+                if (i == 0) {
+                    scor = temp.list[0];
+                } else {
+                    scor = temp.list[i] - temp.list[i - 1];
+                }
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                var tr = document.createElement("tr");
+                var app = "team" + temp.tn;
+                document.getElementById(app).appendChild(tr);
+                tr.appendChild(td1);
+                td1.innerHTML = name;
+                tr.appendChild(td2);
+                td2.innerHTML = scor;
+            };
+        }
+        appen(team1);
+        appen(team2);
+    </script>
+
+</body>
+
+</html>
