@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wheather finder</title>
+</head>
+
+<body>
+    <script>
+        var countrylist;
+
+        function search(value) {
+            var countryFetch = fetch("https://restcountries.eu/rest/v2/name/" + value);
+            countryFetch.then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    for (var i = 0; i < data.length; i++) {
+                        br = document.createElement('br');
+                        document.getElementById("list").appendChild(br);
+                        line = document.createElement('a');
+                        document.getElementById("list").appendChild(line);
+                        line.innerHTML = data[i].name;
+                        line.setAttribute("id", i);
+                        line.setAttribute("onclick", 'selected(id)');
+                    }
+                    countrylist = data;
+                    return countrylist;
+                });
+
+        }
+
+        function selected(id) {
+            //countrylist = countrylist[id];
+            countrylist = countrylist[id];
+            var remove = document.getElementById('list');
+            document.body.removeChild(document.getElementById('list'));
+            console.log(countrylist.flag);
+            document.getElementById("flag").setAttribute("src", countrylist.flag);
+            var apikey = "7f2afff39600342362600e39a9624a9c";
+            var url = "http://api.openweathermap.org/data/2.5/weather?q=" + countrylist.capital + "&units=metric&appid=" + apikey;
+            var wheatherFetch = fetch(url);
+            wheatherFetch.then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    document.getElementById("result").innerHTML = "temperature:" + data.main.temp + ",humidity:" + data.main.humidity + " " + data.weather[0].main
+                })
+        }
+    </script>
+    <input type="text" id="input">
+    <button id="search" onclick="search(document.getElementById('input').value)">search</button>
+    <a id="list"></a>
+    <p id="result"></p>
+    <img id="flag" style="width: 20%;height: 25%; float: right;">
+</body>
+
+</html>
