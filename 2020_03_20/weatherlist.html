@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather list</title>
+    <style>
+        table,
+        td {
+            border: 1px double;
+        }
+        
+        img {
+            width: 25%;
+            height: 20%;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="table">
+        <td>country name</td>
+        <td>flag</td>
+    </table>
+    <script>
+        async function getCountry() {
+            let countries = await fetch("https://restcountries.eu/rest/v2/all");
+            return await countries.json();
+        }
+        async function printCountries() {
+            let countries = await getCountry();
+            console.log(countries);
+            for (var i = 0; i < countries.length; i++) {
+                var row = document.getElementById("table").insertRow();
+                row.setAttribute('id', countries[i].capital);
+                row.setAttribute('onclick', "selected(id)");
+                var cell0 = row.insertCell(0);
+                cell0.innerHTML = countries[i].name;
+                var cell1 = row.insertCell(1);
+                var image = document.createElement('img');
+                image.src = countries[i].flag;
+                cell1.appendChild(image);
+            }
+        }
+        printCountries();
+
+        async function selected(id) {
+            document.write(id);
+            async function weatherFetch() {
+                var apikey = "7f2afff39600342362600e39a9624a9c";
+                var url = "http://api.openweathermap.org/data/2.5/weather?q=" + id + "&units=metric&appid=" + apikey;
+                let weather = await fetch(url);
+                return await weather.json();
+            }
+            async function weatherPrint() {
+                let countryWeather = await weatherFetch();
+                console.log(countryWeather);
+            }
+            weatherPrint();
+        }
+    </script>
+</body>
+
+</html>
