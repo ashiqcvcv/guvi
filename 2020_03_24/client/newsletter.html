@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <title>model</title>
+    <style>
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: xx-large;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .mail {
+            width: 30%;
+            height: 20%;
+            margin-top: 5%;
+        }
+        
+        .nav {
+            width: 50%;
+            height: 40%;
+            font-size: small;
+            box-shadow: 1px 1px 2px 2px darkgray;
+            border-radius: 25px;
+            padding: 7px 7px 7px 7px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 20px;
+        }
+        
+        .btn {
+            width: 25%;
+            font-size: large;
+            border-radius: 2em / 5em;
+            background-color: blue;
+            color: #e0e0e0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <img src="newslettericon.png" class="mail center"><br>
+        <span class="title">Sign up to My<br>Newsletter!<span><br>
+            <form action="http://localhost:3000/database" method="POST">
+        <input type="text" id="fN" class="nav centeritem" placeholder="First Name" name="fname"><br>
+        <input type="text" id="lN" class="nav" placeholder="Last Name" name="lname"><br>
+        <input type="email" id="firstName" class="nav" placeholder="Email" name="email"><br>
+        <input type="number" id="mobNumber" class="nav" placeholder="Contact Number" name="mob"><br>
+        <input type="submit" class="btn nav" value="POST"><br>
+    </form>
+    <form action="http://localhost:3000/database" method="GET">
+        <input type="submit" class="btn nav" value="GET"><br>
+    </form>
+    <form action="http://localhost:3000/delete" method="DELETE">
+        <input type="text" id="id" class="nav" placeholder="123 or 456" name="id"><br>
+        <input type="submit" class="btn nav" value="DELETE"><br>
+    </form>
+        <p>© Made by ashiq</p>
+    </div>
+</body>
+
+</html>
