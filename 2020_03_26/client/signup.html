@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<head>
+    <title>sign Up</title>
+    <style>
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: xx-large;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .mail {
+            width: 30%;
+            height: 20%;
+            margin-top: 5%;
+        }
+        
+        .nav {
+            width: 50%;
+            height: 40%;
+            font-size: small;
+            box-shadow: 1px 1px 2px 2px darkgray;
+            border-radius: 25px;
+            padding: 7px 7px 7px 7px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 20px;
+        }
+        
+        .btn {
+            width: 25%;
+            font-size: large;
+            border-radius: 2em / 5em;
+            background-color: blue;
+            color: #e0e0e0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .log {
+            color: black;
+            width: 10%;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        function signup() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mob = document.getElementById("mob").value;
+            var password = document.getElementById("password").value;
+            var Confirmpassword = document.getElementById("confirmpass").value;
+            if (password === Confirmpassword) {
+                data = {
+                    "name": name,
+                    "email": email,
+                    "mob": mob,
+                    "password": password
+                }
+                fetch("http://localhost:3000/users", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }).then(function(data) {
+                    console.log(data);
+                })
+
+            } else {
+                console.error("password not match");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <p>already a user login</p>
+        <button class="btn log" onclick="window.location.href = './login.html';">Login</button>
+    </div>
+    <div class=" center ">
+        <img src="newslettericon.png" class="mail center"><br>
+        <span class="title ">Sign up</span><br>
+        <input type="text" class="nav centeritem" placeholder="Name" id="name"><br>
+        <input type="email" class="nav" placeholder="Email" id="email"><br>
+        <input type="number" class="nav" placeholder="Contact Number" id="mob"><br>
+        <input type="password" class="nav" placeholder="password" id="password"><br>
+        <input type="password" class="nav" placeholder="password again" id="confirmpass"><br>
+        <input type="submit" class="btn nav" value="SIGNUP" onclick="signup()"><br>
+        <p>© Made by ashiq</p>
+    </div>
+</body>
+
+</html>

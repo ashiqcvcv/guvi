@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Login</title>
+    <style>
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: xx-large;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .mail {
+            width: 30%;
+            height: 20%;
+            margin-top: 5%;
+        }
+        
+        .nav {
+            width: 50%;
+            height: 40%;
+            font-size: small;
+            box-shadow: 1px 1px 2px 2px darkgray;
+            border-radius: 25px;
+            padding: 7px 7px 7px 7px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 20px;
+        }
+        
+        .btn {
+            width: 25%;
+            font-size: large;
+            border-radius: 2em / 5em;
+            background-color: blue;
+            color: #e0e0e0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+    <script>
+        function login() {
+            var data = {
+                email: document.getElementById("email").value,
+                password: document.getElementById("pass").value
+            }
+            fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify(data)
+            }).then((response, err) => {
+                if (err) throw error;
+                response.json()
+                    .then(function(userdat) {
+                        if (userdat.status == 200) {
+                            console.log(userdat.status);
+                            window.localStorage.setItem('jwtToken', userdat.token);
+                            window.location = "./dashboard.html"
+                        } else {
+                            console.log("try again");
+                        }
+                    })
+            }).catch(function(err) {
+                console.error(err)
+            })
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class=" center ">
+        <img src="newslettericon.png" class="mail center"><br>
+        <span class="title ">Login</span><br>
+        <input type="email" id="email" class="nav" placeholder="Email" name="email"><br>
+        <input type="password" id="pass" class="nav" placeholder="password" name="pass"><br>
+        <input type="submit" class="btn nav" value="LOGIN" onclick="login()"><br>
+        <p>© Made by ashiq</p>
+    </div>
+</body>
+
+</html>

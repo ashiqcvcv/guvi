@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var token = localStorage.getItem("jwtToken");
+
+        function withToken() {
+            fetch("http://localhost:3000/dashboard", {
+                method: "POST",
+                headers: {
+                    'Content-Type': "application/json",
+                    'x-access-token': token
+                }
+            }).then((response) => {
+                response.json().then((response) => {
+                    console.log(response.message);
+                })
+            })
+        }
+
+        function withOutToken() {
+            fetch("http://localhost:3000/dashboard", {
+                method: "POST",
+                headers: {
+                    'Content-Type': "application/json",
+                    'x-access-token': "here_is_no_token"
+                }
+            }).then((response) => {
+                response.json().then((response) => {
+                    console.log(response.message);
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="withToken()"> with token</button>
+    <button onclick="withOutToken()"> without token</button>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+express and mongodb used to create login and signup using bcrypt hashing
